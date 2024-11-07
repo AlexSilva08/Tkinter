@@ -2,34 +2,35 @@ from tkinter import *
 
 import sys
 
-sys.path.append('C:/Users/user/Documents/kerygma/TesteDeTela/PacoteTela2')
+telaAzul = Tk()
 
-root = Tk()
-
-
-class Application():
+class Application1():
     def __init__(self):
 
-        self.root = root
-        self.tela()
+        self.telaAzul = telaAzul
+        self.tela1()
         self.CriandoBotao()
-        root.mainloop()
+        telaAzul.mainloop()
 
-    def ChamandoTela2(self):
+    def callTela2(self):
 
-        self.tela2()
+        
+        sys.path.append('D:/Users/Alex Silva/Documents/Tkinter/TesteDeTela/PacoteTela2')
+        import tela2
+        Application1() == tela2
 
-    def tela(self):
 
-        self.root.title("Teste de tela 1")
-        self.root.configure(background='skyblue')
-        self.root.geometry("1080x720")
-        self.root.resizable(True, True)
-        self.root.maxsize(width=1920, height=1080)
-        self.root.minsize(width=800, height=600)
+    def tela1(self):
+
+        self.telaAzul.title("Teste de tela 1")
+        self.telaAzul.configure(background='skyblue')
+        self.telaAzul.geometry("1080x720")
+        self.telaAzul.resizable(True, True)
+        self.telaAzul.maxsize(width=1920, height=1080)
+        self.telaAzul.minsize(width=800, height=600)
 
     def CriandoBotao(self):
-        self.btnTela2 = Button(text="Tela2" command=ChamandoTela2)
+        self.btnTela2 = Button(text="Tela2", command=self.callTela2)
         self.btnTela2.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.15)
 
-Application()
+Application1()
